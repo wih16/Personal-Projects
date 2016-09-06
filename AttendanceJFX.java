@@ -1,3 +1,9 @@
+/* Stylistc: 
+Change it so that the grid for the name/email is different than where the email's are added
+
+Code:
+
+ */
 import javafx.application.Application;
 import javafx.event.*;
 import javafx.scene.*;
@@ -16,19 +22,21 @@ public class AttendanceJFX extends Application{
     @Override
     public void start(Stage primaryStage){
 	stage = primaryStage;
-	Scene scene = ProgramScene();
-	stage.setScene(scene);
+	Scene scene = ProgramScene(); //Creating the entry scene
+	stage.setScene(scene); 
 	stage.setTitle("Program Name");
-	stage.show();
+	stage.show(); //Showing the "Enter Program Title" stage
 	
     }//primary stage
     public Scene ProgramScene(){
-	GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
-	grid.setHgap(5);
-	grid.setVgap(10);
-	grid.setPadding(new Insets(5,5,5,5));
-	grid.setStyle("-fx-background-color: #bed6ff;");
+
+	//Creating a grid for the Program Scene
+	GridPane grid = new GridPane(); 
+        grid.setAlignment(Pos.CENTER); //Aligning the grid in the center
+	grid.setHgap(5); //setting the gaps between the columns to be 5 pixels
+	grid.setVgap(10); //setting the caps between the rows to be 10 pixels
+	//grid.setPadding(new Insets(5,5,5,5));
+	grid.setStyle("-fx-background-color: #CCDBE1;");
 
 	
 	Label ProgramTitle = new Label("Program Title:");
@@ -65,11 +73,11 @@ public class AttendanceJFX extends Application{
 
     protected Scene Attendance(){
 	GridPane gridA = new GridPane();
-        gridA.setAlignment(Pos.TOP_LEFT);
+        gridA.setAlignment(Pos.TOP_CENTER);
 	gridA.setHgap(5);
 	gridA.setVgap(10);
 	gridA.setPadding(new Insets(10,10,10,10));
-	gridA.setStyle("-fx-background-color: #bed6ff;");
+	gridA.setStyle("-fx-background-color: #CCDBE1;");
 	
 
 	Label Name = new Label("Name:");
