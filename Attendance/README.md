@@ -1,0 +1,1 @@
+This program allows the user to record name and email attedance for an event. 
