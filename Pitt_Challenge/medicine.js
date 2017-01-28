@@ -12,10 +12,16 @@ $(document).ready(function(){
 
 $(document).ready(function(){
    $('.table_row').click(function(){
+       $('.table_row').css('background-color', 'white');
+       $(this).css('background-color','lightgray');
+       $('#details').hide();
+       $('#details2').hide();
+       $('#details3').hide();
+       
        var tableData = $(this).children("td").map(function() {
         return $(this).text();
     }).get();
-       
+        delete localStorage.getItem('ailment');
        console.log(tableData);
        
        var index = sessionStorage.getItem('index');
@@ -29,7 +35,7 @@ $(document).ready(function(){
            }
        }
        console.log(sessionStorage.getItem('ailment'))
-       
+       document.getElementById('feeling').innerHTML = 'How has your ' + sessionStorage.getItem('ailment') + ' been?';
        
        
       $('#take').show(); 
