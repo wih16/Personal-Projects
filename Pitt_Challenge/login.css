@@ -1,0 +1,31 @@
+body {
+    background-color: #ede5e5 !important;
+    color: #4c0000 !important;
+}
+
+
+#header{
+    background-color: #4c0000
+}
+
+#website_title{
+    color: #ede5e5;
+    font-size: 30px;    
+}
+a{
+    background-color:#4c0000;
+}
+
+#menu_info{
+    font-size: 25px;
+    height: auto;
+    margin-top: 10px; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:33%;
+}   
+#menu_inner{
+    margin-left:10%
+    width:75%;
+}

@@ -2,12 +2,13 @@
 <html lang="en-US">
     <head> 
         <title> Meditrack </title>
-        <link rel="stylesheet" href="meditrack.css">       
+        <link rel="stylesheet" href="login.css">       
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,76 +22,123 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" style="margin:0px;">
             <div class="container-fluid" id="header">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span> 
-                    </button>
-                    <a class="navbar-brand" id="website_title" href="index.html">Meditrack</a>
-                </div>
-                <div class="collapse navbar-collapse" id="navBar">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#" style="background-color:#4c0000"> Home </a></li>
-                        <li><a href="medicine.html"> Medicine </a></li>
-                        <li><a href="hospitals.html"> Hospitals </a></li>
-                    </ul>  
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
+                    <a class="navbar-brand" id="website_title" href="index.html"><b>Meditrack</b></a>
                 </div>
             </div>
         </nav>
         <div style="height:50px;"> </div>
-       
-        <div id="img-bck">
-            <img src="pill_bottle.jpg" class="img-responsive" style=" width:100%;position:absolute;"> 
-            <div class="container-fluid" style="height:auto;">
-                <div class="row" style="margin-top:140px; position:relative;" id="home_cont">     
-                    <div class="col-sm-4"> </div>
-                    <div class="col-sm-4"> 
-                        <h1 id="home_text"> Meditrack </h1>
-                    </div>
-                    <div class="col-sm-4"> </div>                
-                </div>
-                <div class="row" style="position: relative; margin-top:10px;" id="home_cont_sub">     
-                    <div class="col-sm-2"> </div>
-                    <div class="col-sm-8" id="home_text_sub"> Your Personal Medicine Tracker
-                    </div>
-                    <div class="col-sm-2"> </div>                
-                </div>
+
+        <div class="row" style="height:100px;">
+            <div class="col-sm-6">
+                <div style="margin-top: 30px; width:100%; margin-left:10%; font-size:40px;margin-bottom:none;"> <br>Do you <i>have</i> an account?</div>
             </div>
-        </div>
+            <div class="col-sm-6">
+                <div style="margin-top: 30px; width:100%; margin-left:10%; font-size:40px;margin-bottom:none;"><br> Do you <i>need</i> an account?</div>
+            </div>
         
-        <div class="container-fluid" id="info">
-            <div id="inner_info">
-                <h1 id="info_header"> About</h1>
-                <p style="font-size:20px;"> Meditrack is a handy at home tool that allows people on a perscribed medicine to very easily track their medicine usage while providing useful information for their doctors. We aim to provide better communication between patients and doctors inbetween visits. By collecting multiple data between appointments, a doctor can view a patient's change in condition over time so they can more accurately adjust a patient's plan. 
-                </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-6" >
+                <div style="margin-top: 30px; width:50%; margin-left:30%; border-width: 0px 0px 2px 0px; border-style: dashed;">
+                    <h1>Login:</h1>
+                </div>
+                <form style="margin-top: 30px; width:50%; margin-left:30%"> 
+                    <div class="form-group">
+                      <label for="usr">Email:</label>
+                      <input type="text" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control" id="pwd">
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-success" id="enter" href="javascript: click2();">Enter</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <div style="margin-top: 30px; width:50%; margin-left:30%; border-width: 0px 0px 2px 0px; border-style: dashed;">
+                    <h1>Sign Up:</h1>
+                </div>
+                <form style="margin-top: 30px; width:50%; margin-left:30%"> 
+                    <div class="form-group">
+                      <label for="usr">Name:</label>
+                      <input type="text" class="form-control" id="usr">
+                    </div>
+                    <div class="form-group">
+                      <label for="usr">Email:</label>
+                      <input type="text" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control" id="pwd">
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-success" id="enter" href="javascript: click();">Enter</a>
+                    </div>
+                </form>
             </div>
         </div>
+        <div class="row" style="margin-top:50px;">
+            <div class="col-sm-3" id='menu_info'>
+                <div id="menu_inner"> <span class="glyphicon glyphicon-pencil"></span> Record Health Data </div>
+            </div>
+            <div class="col-sm-6" id='menu_info'><div id="menu_inner">
+                <span class="glyphicon glyphicon-share"></span> Share Information with Doctors</div>
+            </div>
+            <div class="col-sm-3" id='menu_info'><div id="menu_inner">
+                <span class="glyphicon glyphicon-map-marker"></span> Find Hostpitals
+            </div></div>
+        </div>
+        <script>
+            function click2(){
+                var email = $('#email').val();
+                var password = $('#pwd').val();
+                
+                var people = JSON.parse(localStorage.people);
+                for(i = 0; i < people.length; i++){
+                    console.log(email);
+                    console.log(people[i][1]);
+                    if(email == people[i][1]){
+                        console.log(password);
+                        console.log(people[i][2]);
+                        if(password == people[i][2]){  
+                            sessionStorage.setItem('email',email)
+                            window.location.href = 'home.html';
+                            break;
+                        }
+                        alert("Please enter a valid password");
+                        window.location.href = 'index.html'
+                    }                    
+                }
+                if (i==people.length){
+                    alert("This isn't a valid email. Create an account");
+                }                
+            }
+            
+            function click(){
+                var people = JSON.parse(localStorage.getItem('people'));
+                people = people || [];
+                var name = $('#usr').val();
+                var email = $('#email').val();
+                var pass = $('#pwd').val();
+
+                if(name == '' || email == '' || pass == ''){
+                    alert("Please fill out every part");
+                    window.location.href = 'index.html'
+                }
+                else{
+                    var new_array = [name, email, pass];
+                    people.push(new_array);
+
+                    localStorage.people = JSON.stringify(people);
+
+                    /*delete localStorage.people;  */ 
+
+                    window.location.href = "home.html";  
+                }
+            }
+        </script>
         
-        <div class="container-fluid" id="info">
-            <div id="inner_info">
-                <h1 id="info_header"> Privacy </h1>
-                <p style="font-size:20px;"> Your privacy is our priority, so every response you save on our website is secure and can only be seen by you and your doctors. While we do store your data in our warehouses, we anonymise all data so you don't have to worry about your name being associated with your personal details. 
-                </p>
-            </div>
-        </div>
-    
-        <div class="container-fluid" id="info" style="margin-bottom:30px;">
-            <div id="inner_info">
-                <h1 id="info_header"> Data </h1>
-                <p style="font-size:20px;"> Your doctor(s) will have access to all data recorded on Meditrack so that they can make more informed medical decisions. Understand that the data recorded is intended to benefit you. We do not control what the doctor's do with the data we provide them and any concerns with your health or medical plan should be addressed with your doctor(s).
-                </p>
-            </div>
-        </div>
-    
     </body>
-
-
-
-
-
-
 </html>
