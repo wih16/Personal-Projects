@@ -32,10 +32,9 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navBar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"> Home </a></li>
+                        <li><a href="index.html"> Home </a></li>
                         <li><a href="medicine.html"> Medicine </a></li>
                         <li><a href="hospitals.html"> Hospitals </a></li>
-                        <li><a href="#"> Appointments</a></li>
                     </ul>  
                     <ul class="nav navbar-nav navbar-right">
                       <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -74,7 +73,7 @@
                         console.log(password);
                         console.log(people[i][2]);
                         if(password == people[i][2]){  
-                            localStorage.setItem('email',email)
+                            sessionStorage.setItem('email',email)
                             window.location.href = 'index.html';
                             break;
                         }

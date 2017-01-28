@@ -18,16 +18,17 @@ $(document).ready(function(){
        
        console.log(tableData);
        
-       var index = localStorage.getItem('index');
+       var index = sessionStorage.getItem('index');
        var medicines = JSON.parse(localStorage.getItem('medicines'));
        for(i = 0; i < medicines[index][1].length; i++){
            console.log(i + ' ' + medicines[index][1][i][0])
            if(tableData[0] == medicines[index][1][i][0]){
-               localStorage.setItem('ailment', medicines[index][1][i][4]);
+               sessionStorage.setItem('index2', i)
+               sessionStorage.setItem('ailment', medicines[index][1][i][4]);
                break;
            }
        }
-       console.log(localStorage.getItem('ailment'))
+       console.log(sessionStorage.getItem('ailment'))
        
        
        
@@ -39,6 +40,14 @@ $(document).ready(function(){
    $('#take_button').click(function(){
         $('#details').fadeIn(500); 
         $(this).css('background-color', '#5CB85C')
+        
+        var index = sessionStorage.getItem('index');
+        var index2 = sessionStorage.getItem('index2');
+        var medicines = JSON.parse(localStorage.getItem('medicines'));
+        var amount = parseInt(medicines[index][1][index2][3]) - 1;
+        medicines[index][1][index2][3] = amount;
+       localStorage.setItem('medicines', JSON.stringify(medicines));
+
    }); 
 });
 

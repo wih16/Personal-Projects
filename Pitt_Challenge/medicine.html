@@ -35,7 +35,6 @@
                         <li><a href="index.html"> Home </a></li>
                         <li class="active"><a href="#" style="background-color:#4c0000"> Medicine </a></li>
                         <li><a href="hospitals.html"> Hospitals </a></li>
-                        <li><a href="#"> Appointments</a></li>
                     </ul>   
                     <ul class="nav navbar-nav navbar-right">
                       <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -104,7 +103,7 @@
         
         
         <script>
-            document.getElementById('feeling').innerHTML = 'How does your ' + localStorage.getItem('ailment') + ' feel?';
+            document.getElementById('feeling').innerHTML = 'How has your ' + localStorage.getItem('ailment') + ' been?';
         </script>
         
         <script> 
@@ -131,14 +130,14 @@
             myTable.appendChild(tableBody);
 
             var medicines = JSON.parse(localStorage.getItem('medicines'));
-            var email = localStorage.getItem('email');
+            var email = sessionStorage.getItem('email');
             for(i = 0; i < medicines.length; i++){
                 if(email == medicines[i][0]){
                     var index = i;
                     break;
                 }
             }
-            localStorage.setItem('index', index);
+            sessionStorage.setItem('index', index);
             if(i == medicines.length){ alert("You currently have no perscribed medications");}
             else{
                 var med = medicines[index][1];
