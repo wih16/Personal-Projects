@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html lang="en-US">
+    <head> 
+        <title> Meditrack </title>
+        <link rel="stylesheet" href="hospitals.css">       
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <script src="hospitals.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="margin:0px;">
+            <div class="container-fluid" id="header">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" id="website_title" href="index.html">Meditrack</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navBar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html"> Home </a></li>
+                        <li><a href="medicine.html"> Medicine </a></li>
+                        <li class="active"><a href="#" style="background-color: #4c0000"> Hospitals </a></li>
+                        <li><a href="#"> Appointments</a></li>
+                    </ul>    
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div style="height:50px;"> </div>
+        <div class="container-fluid" id="outer_intro">
+            <div id="intro"> 
+                <h1 id="intro_items"> Hospitals </h1>
+            </div>
+        </div>         
+        <div id="googleMap_outer"><div id="googleMap" style="width:50%; height:600px;margin-left:25%"> </div> </div>
+        
+        
+        <div class='container-fluid' id="click_outer">
+            <div class="container-fluid" id="click">
+                <h3 style="margin:0px; text-align:center"> Click a pin for more information about a hospital</h3>
+            </div>
+        </div>
+        
+        <div class="container-fluid" id="show_location">
+            <div class="container-fluid" id="show_inner">
+                <h3 id="show_header"> </h3>
+                <h5 id='show_add' style="margin-left:20px;"> </h5>
+                <h5 id='show_phone' style="margin-left:20px;"></h5>
+            </div>
+        </div>
+        
+        <script>
+            var hospitals = [
+                ['UPMC Mercy', '1400 Locust Street, Pittsburgh, PA 15219', '4122328111', ],
+                ['Allegheny General Hospital', '320 East North Avenue, Pittsburgh, PA 15212', '4123593131'],
+                ['Western Pennsylvania Hospital', '4800 Friendship Avenue, Pittsburgh, PA 15224', '4125785000'],
+                ['UPMC St Margaret', '815 Freeport Road, Pittsburgh, PA	15215', '4127844000'],
+                ['UPMC Passavant','9100 Babcock Boulevard, Pittsburgh,PA 15237','4123676700'],
+                ['Magee Womens Hospital of UPMC Health System','300 Halket Street, Pittsburgh, PA 15213','4126414010'],
+                ['UPMC Presbyterian Shadyside','200 Lothrop Street,	Pittsburgh,	PA 15213','4126478788'],
+                ['St Clair Hospital','1000 Bower Hill Road,	Pittsburgh,	PA 15243','4129424000'],
+                ["Children's Hospital of Pittsburgh of UMPC",'4401 Penn Avenue,	Pittsburgh, PA 15224','4126925325'],
+                ["Children's Home of Pittsburgh	",'5324 Penn Avenue, Pittsburgh, PA 15224','4124414884'],
+                ["The Children's Institute of Pittsburgh",'6301 Northumberland Street, Pittsburgh, PA 15217','4124202400']
+            ]
+            function myMap() {
+                var mapProp= {
+                    center:new google.maps.LatLng(40.4406,-79.9959),
+                    zoom:11,
+                };
+                var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            
+            
+                var geocoder = new google.maps.Geocoder();
+            
+                for(i = 0; i < 11; i++){
+                    geocodeAddress(geocoder, map, i)
+                }
+
+                function geocodeAddress(geocoder, resultsMap, index) {
+                    var address = hospitals[index][1];
+                    geocoder.geocode({'address': address}, function(results, status) {
+                      if (status === 'OK') {
+                        var marker = new google.maps.Marker({
+                          map: resultsMap,
+                          position: results[0].geometry.location
+                        });
+                        marker.addListener('click', function(){
+                            showLocation(hospitals[index]);
+                        });
+                      } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                      }
+                    });
+                }
+                
+                function showLocation(array){
+                    document.getElementById('show_location').style.display = 'block';  
+                    window.scrollTo(0,3000);    
+                    document.getElementById('show_header').innerHTML = array[0];
+                    document.getElementById('show_add').innerHTML = 'Address: ' + array[1];
+                    document.getElementById('show_phone').innerHTML = 'Phone: ' + array[2];
+                }
+                
+                
+            } 
+            
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD7foZUx2_BGLajQUHwo3oDRAfV58VEBw&callback=myMap"></script>
+    </body>
+</html>

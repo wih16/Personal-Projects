@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html lang="en-US">
+    <head> 
+        <title> Meditrack </title>
+        <link rel="stylesheet" href="meditrack.css">       
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+          
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="margin:0px;">
+            <div class="container-fluid" id="header">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a class="navbar-brand" id="website_title" href="index.html">Meditrack</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navBar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"> Home </a></li>
+                        <li><a href="medicine.html"> Medicine </a></li>
+                        <li><a href="hospitals.html"> Hospitals </a></li>
+                        <li><a href="#"> Appointments</a></li>
+                    </ul>  
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                      <li class='active'><a href="#" style="background-color:#4c0000"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div style="margin-top: 300px; width:50%; margin-left:25%">
+            <h1>Login:</h1>
+        </div>
+        <form style="margin-top: 30px; width:50%; margin-left:25%"> 
+            <div class="form-group">
+              <label for="usr">Email:</label>
+              <input type="text" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd">
+            </div>
+            <div class="form-group">
+                <a class="btn btn-success" id="enter" href="javascript: click2();">Enter</a>
+            </div>
+        </form>
+        
+        <script>
+            function click2(){
+                var email = $('#email').val();
+                var password = $('#pwd').val();
+                
+                var people = JSON.parse(localStorage.people);
+                for(i = 0; i < people.length; i++){
+                    console.log(email);
+                    console.log(people[i][1]);
+                    if(email == people[i][1]){
+                        console.log(password);
+                        console.log(people[i][2]);
+                        if(password == people[i][2]){  
+                            localStorage.setItem('email',email)
+                            window.location.href = 'index.html';
+                            break;
+                        }
+                        alert("Please enter a valid password");
+                        window.location.href = 'login.html'
+                    }                    
+                }
+                if (i==people.length){
+                    alert("This isn't a valid email. Create an account");
+                    window.location.href = 'signup.html'  
+                }                
+            }
+        </script>
+    </body>
+</html>

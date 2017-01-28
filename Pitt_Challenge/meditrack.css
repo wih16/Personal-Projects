@@ -52,6 +52,11 @@ a{
     height: auto;
     border-color: #4c0000;
     border-style: solid;
-    border-width: 2px 0px 2px 0px;
+    border-width: 0px 0px 2px 0px;
     padding: 5px;
+}
+
+#info_header{
+    padding-bottom: 5px;
+    border-bottom: dashed 3px #4c0000; 
 }

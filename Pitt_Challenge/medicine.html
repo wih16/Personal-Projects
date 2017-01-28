@@ -34,9 +34,13 @@
                     <ul class="nav navbar-nav">
                         <li><a href="index.html"> Home </a></li>
                         <li class="active"><a href="#" style="background-color:#4c0000"> Medicine </a></li>
-                        <li><a href="#"> Hospitals </a></li>
+                        <li><a href="hospitals.html"> Hospitals </a></li>
                         <li><a href="#"> Appointments</a></li>
-                    </ul>       
+                    </ul>   
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -62,30 +66,74 @@
         </div>
         
         <div id = "take" style="display:flex; justify-content:center; align-items:center; width:100%;">             
-             <button type="button" class="btn btn-success" style="width: 20%;">Take Pill</button>
+             <button id = "take_button" type="button" class="btn btn-success" style="width: 20%;">Take Pill</button>
         </div>
         
         <div id="details">
             <div id='details_inside'> 
                 <h3 id="feeling"> <!-- filled by JS --> </h3>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default" id="button1"> <span class="glyphicon glyphicon-thumbs-up"></span> </button>
+                    <button type="button" class="btn btn-default" id="button2"> <span class="glyphicon glyphicon-thumbs-up"></span> </button>
+                    <button type="button" class="btn btn-default" id="button3"> <span class="glyphicon glyphicon-thumbs-up"></span> </button>
+                    <button type="button" class="btn btn-default" id="button4"> <span class="glyphicon glyphicon-thumbs-up"></span> </button>
+                    <button type="button" class="btn btn-default" id="button5"> <span class="glyphicon glyphicon-thumbs-up"></span> </button>
+                </div>
             </div>
         </div>
+        
+        <div id="details2">
+            <div id = 'details_inside'> 
+                <h3 style="padding: 5px"> Is the pain better or worse than normal? </h3>
+                <div class="btn-group" id="better_group">
+                    <button type="button" class="btn btn-defualt" id='worse'>
+                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                    </button>
+                    <button type="button" class="btn btn-defualt" id='better'>
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="details3" style="padding-bottom: 100px; position: absolute;">
+            <div style="float:right;">
+                <button type="button" class="btn btn-default" id="submit"> Submit </button>
+            </div>
+        </div>
+        
+        
         <script>
             document.getElementById('feeling').innerHTML = 'How does your ' + localStorage.getItem('ailment') + ' feel?';
         </script>
         
         <script> 
-            var medicine = new Array();
+            /*var array1 = ['Advil', 'Before Breakfast and Dinner', '150mg', '6', 'Sprained Thumb', 'June 2016'];
+            
+            var array2 = ['Zoloft', 'Before Breakfast', '100mg', '15', 'Depression/OCD', 'August 2015'];
+            
+            var array3 = ['Prozac', 'Before Bed', '75mg', '25', 'OCD', 'January 2015'];
+            
+            var array4 = [array1, array2, array3];
+            console.log(localStorage.getItem('email'));
+            var email = localStorage.getItem('email');
+            var array5 = [array1, array2];
+            var medicines = [[email, array4],['williamhhinard@gmail.com',array5]]; 
+            localStorage.medicines = JSON.stringify(medicines);
+            var array = JSON.parse(localStorage.getItem('medicines'));*/
 
-            medicine[0] = ['Advil', 'Before Breakfast and Dinner', '150mg', '6', 'Sprained Thumb', 'June 2016'];
-
+            
+            
+            
             var myTable = document.getElementById("med_Table");
             var tableBody = document.createElement('TBODY');
 
             myTable.appendChild(tableBody);
 
+            
             for(i = 0; i < medicine.length; i++){
                 var tr = document.createElement('TR');
+                tr.id = 'row';
                 for(k = 0; k < 4; k++){
                     var td = document.createElement('TD');
                     td.textContent = medicine[i][k];

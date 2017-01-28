@@ -25,6 +25,7 @@ a{
     border-style: solid;
     border-width: 2px 0px 2px 0px;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 #intro_items{
@@ -33,66 +34,41 @@ a{
     margin-top: 15px;
 }
 
-#details, #details2, #details3{
+#click_outer{
+    height: auto;
+    margin-top: 10px; 
     display:flex;
     justify-content:center;
     align-items:center;
     width:100%;
-    margin-top: 20px;
 }
 
-#details_inside{
-    width: 50%;
+#click{
+    width: 50%; 
+    height: 40px;
     border-color: #4c0000;
     border-style: solid;
     border-width: 2px 0px 2px 0px;
-}
-
-#feeling{
     padding: 5px;
+    margin-bottom: 10px;
 }
 
-#take_button{
-    outline: none;
+#show_location{
+    height: auto;
+    margin-top: 30px; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    display: none;
 }
 
-#take_button:hover{
-    background-color: #499349;
-}
-
-#button1, #button2, #button3, #button4, #button5{
-    padding: 30px 40px;
-    outline: none;
-}
-.btn-group{
-    padding: 10px;
-    margin-left: 120px;
-}
-
-#better, #worse{
-    background-color: #ffffff;
-    padding: 30px 40px;
-    outline: none;
-    border: solid 1px lightgray
-}
-
-#better:hover{
-    background-color: #5CB85C; 
-}
-
-#worse:hover{
-    background-color: #6f3232;
-}
-
-#better_group{
-    margin-left: 260px;
-    padding: 10px
-}
-
-#submit{
-    outline: none;
-}
-
-#submit:hover{
-    background-color: #5CB85C;
+#show_inner{
+    height: 140px;
+    width: 50%; 
+    border-color: #4c0000;
+    border-style: solid;
+    border-width: 2px 0px 2px 0px;
+    padding: 5px;
+    margin-bottom: 30px;
 }
