@@ -1,0 +1,57 @@
+#header{
+    background-color: #4c0000;
+}
+
+#website_title{
+    color: #fff;
+    font-size: 20px;
+}
+a{
+    background-color:#4c0000;
+}
+
+#home_cont{
+    width: 100%;
+    margin-top: 50px;
+    height: 50px;
+}
+
+#home_text{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 80px;
+    margin: 0px;
+}
+#home_cont_sub{
+    width: 100%;
+    height: 50px;
+}
+#home_text_sub{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#img-bck{
+    height: 550px;
+}
+
+#info{
+    height: auto;
+    margin-top: 30px; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+#inner_info{
+    width: 50%; 
+    height: auto;
+    border-color: #4c0000;
+    border-style: solid;
+    border-width: 2px 0px 2px 0px;
+    padding: 5px;
+}
