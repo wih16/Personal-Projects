@@ -84,7 +84,7 @@
         
         <div id="details2">
             <div id = 'details_inside'> 
-                <h3 style="padding: 5px"> Is the pain better or worse than normal? </h3>
+                <h3 style="padding: 5px"> Does it feel better or worse than normal? </h3>
                 <div class="btn-group" id="better_group">
                     <button type="button" class="btn btn-defualt" id='worse'>
                     <span class="glyphicon glyphicon-thumbs-down"></span>
@@ -130,20 +130,30 @@
 
             myTable.appendChild(tableBody);
 
-            
-            for(i = 0; i < medicine.length; i++){
-                var tr = document.createElement('TR');
-                tr.id = 'row';
-                for(k = 0; k < 4; k++){
-                    var td = document.createElement('TD');
-                    td.textContent = medicine[i][k];
-                    tr.appendChild(td);
+            var medicines = JSON.parse(localStorage.getItem('medicines'));
+            var email = localStorage.getItem('email');
+            for(i = 0; i < medicines.length; i++){
+                if(email == medicines[i][0]){
+                    var index = i;
+                    break;
                 }
             }
-            
-            localStorage.setItem('ailment', medicine[0][4]);
-
-            tableBody.appendChild(tr);
+            localStorage.setItem('index', index);
+            if(i == medicines.length){ alert("You currently have no perscribed medications");}
+            else{
+                var med = medicines[index][1];
+                for(i = 0; i < med.length; i++){
+                    var tr = document.createElement('TR');
+                    for(k = 0; k < 4; k++){
+                        var td = document.createElement('TD');
+                        td.textContent = med[i][k];
+                        tr.appendChild(td);
+                    }
+                    tr.id = "row";
+                    tr.className = 'table_row';  
+                    tableBody.appendChild(tr);
+                }
+            }
         </script>   
     </body>
 </html>

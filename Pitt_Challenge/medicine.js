@@ -11,7 +11,26 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-   $('#row').click(function(){
+   $('.table_row').click(function(){
+       var tableData = $(this).children("td").map(function() {
+        return $(this).text();
+    }).get();
+       
+       console.log(tableData);
+       
+       var index = localStorage.getItem('index');
+       var medicines = JSON.parse(localStorage.getItem('medicines'));
+       for(i = 0; i < medicines[index][1].length; i++){
+           console.log(i + ' ' + medicines[index][1][i][0])
+           if(tableData[0] == medicines[index][1][i][0]){
+               localStorage.setItem('ailment', medicines[index][1][i][4]);
+               break;
+           }
+       }
+       console.log(localStorage.getItem('ailment'))
+       
+       
+       
       $('#take').show(); 
    }); 
 });
