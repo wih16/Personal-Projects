@@ -1,5 +1,5 @@
 # This data is from https://data.wprdc.org/dataset/pittsburgh-traffic-signals/resource/771023db-a691-4a2e-9f98-cd62621365d4
-# As practice reading CSV files, I am parsing through the last and calculating various statistics
+# As practice reading CSV files, I am parsing through the list and calculating various statistics
 
 import csv
 import numpy as np
