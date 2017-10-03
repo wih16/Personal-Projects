@@ -8,5 +8,5 @@ These plugins are written for the open-source business modeling software Archi, 
    * Modeling a costing algorithm developed by a fellow business intern 
 2. Merge
    * Contains two merge options
-   ** Merging two elements 
-   ** Merging two models
+    * Merging two elements 
+    * Merging two models
