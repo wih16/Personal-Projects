@@ -42,22 +42,26 @@
         </nav>
         <div style="height:50px;"> </div>
        
-        <div id="img-bck">
-            <img src="pill_bottle.jpg" class="img-responsive" style=" width:100%;position:absolute;"> 
-            <div class="container-fluid" style="height:auto;">
-                <div class="row" style="margin-top:140px; position:relative;" id="home_cont">     
-                    <div class="col-sm-4"> </div>
-                    <div class="col-sm-4"> 
-                        <h1 id="home_text"> Meditrack </h1>
-                    </div>
-                    <div class="col-sm-4"> </div>                
+        <script>
+            $('#pills').ready(function(){
+               $("#label").css("height", $("#pills").height());
+            });
+        </script>
+        
+        <img src="pill_bottle.jpg" class="img-responsive" style="width:100%;position:absolute;" id="pills"> 
+        <div class="container-fluid" style="position: relative;" id='label'>
+            <div class="row" style="margin-top:140px; position:relative;" id="home_cont">     
+                <div class="col-sm-4"> </div>
+                <div class="col-sm-4"> 
+                    <h1 id="home_text"> Meditrack </h1>
                 </div>
-                <div class="row" style="position: relative; margin-top:10px;" id="home_cont_sub">     
-                    <div class="col-sm-2"> </div>
-                    <div class="col-sm-8" id="home_text_sub"> Your Personal Medicine Tracker
-                    </div>
-                    <div class="col-sm-2"> </div>                
+                <div class="col-sm-4"> </div>                
+            </div>
+            <div class="row" style="position: relative; margin-top:10px;" id="home_cont_sub">     
+                <div class="col-sm-2"> </div>
+                <div class="col-sm-8" id="home_text_sub"> Your Personal Medicine Tracker
                 </div>
+                <div class="col-sm-2"> </div>                
             </div>
         </div>
         
