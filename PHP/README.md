@@ -1,6 +1,6 @@
-##PHP
+## PHP
 
-###A collection of PHP projects 
+### A collection of PHP projects 
 
 1. Vinyl 
    * My introduction to PHP
