@@ -35,7 +35,7 @@
         		text-align:center; 
         		font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif; 
         		color: #000000; 
-        		font-size: 20px;
+        		font-size: 30px;
         	}
         </style>
     </head>
