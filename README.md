@@ -8,8 +8,8 @@
      * Was used for a few months to take attendance for my programs
 
 2. PHP
-   *A collection of simple PHP projects
-   *Often use SQL/MySQL
+   * A collection of simple PHP projects
+   * Often use SQL/MySQL
 
 3. Pitt_Challenge
    * A project from Pitt Challenege 2017
