@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="com.archimatetool.merge.MergeModels"
+            id="com.archimatetool.merge.MergeModels"
+            name="Merge Models">
+      </command>
+      <command
+            defaultHandler="com.archimatetool.merge.MergeElements"
+            id="com.archimatetool.merge.MergeElements"
+            name="Merge Elements">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:com.archimatetool.editor.treeModelView?after=append_extensions">
+         <command
+               commandId="com.archimatetool.merge.MergeModels"
+               label="Merge Models"
+               style="push"
+               tooltip="Merge Two Models">
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:com.archimatetool.editor.treeModelView?after=append_extensions">
+         <command
+               commandId="com.archimatetool.merge.MergeElements"
+               label="Merge Elements"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+
+</plugin>
