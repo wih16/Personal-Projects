@@ -124,3 +124,15 @@ input[type = "text"]:focus{
 	font-size: 30px;
 }
 
+table, th.left, td.left{
+	border-bottom: 1px solid rgba(107, 177, 255, .4); 
+	border-right: 1px solid rgba(107, 177, 255, .4); 
+}
+table, th.right, td.right{
+	border-bottom: 1px solid rgba(107, 177, 255, .4); 
+	border-left: 1px solid rgba(107, 177, 255, .4); 
+}
+table{
+	border: none; 
+}
+
